@@ -1,0 +1,874 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="3.1" jmeter="3.1 r1770033">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Box SDK Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>true</xml>
+            <fieldNames>false</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>true</xml>
+            <fieldNames>false</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Parameters" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="user.threads" elementType="Argument">
+            <stringProp name="Argument.name">user.threads</stringProp>
+            <stringProp name="Argument.value">50</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Number of concurrent clients</stringProp>
+          </elementProp>
+          <elementProp name="rampup" elementType="Argument">
+            <stringProp name="Argument.name">rampup</stringProp>
+            <stringProp name="Argument.value">4</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Ramp up time for test</stringProp>
+          </elementProp>
+          <elementProp name="user.login" elementType="Argument">
+            <stringProp name="Argument.name">user.login</stringProp>
+            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">User email</stringProp>
+          </elementProp>
+          <elementProp name="client.id" elementType="Argument">
+            <stringProp name="Argument.name">client.id</stringProp>
+            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Box App Client Id</stringProp>
+          </elementProp>
+          <elementProp name="client.secret" elementType="Argument">
+            <stringProp name="Argument.name">client.secret</stringProp>
+            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Box App Client Secret</stringProp>
+          </elementProp>
+          <elementProp name="enterprise.id" elementType="Argument">
+            <stringProp name="Argument.name">enterprise.id</stringProp>
+            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Box Enterprise Id</stringProp>
+          </elementProp>
+          <elementProp name="public.key.id" elementType="Argument">
+            <stringProp name="Argument.name">public.key.id</stringProp>
+            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Box App Public Key Id</stringProp>
+          </elementProp>
+          <elementProp name="private.key.path" elementType="Argument">
+            <stringProp name="Argument.name">private.key.path</stringProp>
+            <stringProp name="Argument.value">/&lt;path_to_folder&gt;/private_key.pem</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Path to Box App private key file</stringProp>
+          </elementProp>
+          <elementProp name="key.pass" elementType="Argument">
+            <stringProp name="Argument.name">key.pass</stringProp>
+            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Box App Key Passphrase</stringProp>
+          </elementProp>
+          <elementProp name="max.cache.entries" elementType="Argument">
+            <stringProp name="Argument.name">max.cache.entries</stringProp>
+            <stringProp name="Argument.value">100</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Box App max cache entries</stringProp>
+          </elementProp>
+          <elementProp name="search.file.extensions" elementType="Argument">
+            <stringProp name="Argument.name">search.file.extensions</stringProp>
+            <stringProp name="Argument.value">pdf</stringProp>
+            <stringProp name="Argument.desc">Comma-delimited string of file extension without the period. Example: &quot;pdf,docx&quot;</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="search.ancestor.ids" elementType="Argument">
+            <stringProp name="Argument.name">search.ancestor.ids</stringProp>
+            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.desc">Comma-delimited string of ancestor or parent folder id&apos;s. Example: &quot;123456,654321&quot;</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="search.term" elementType="Argument">
+            <stringProp name="Argument.name">search.term</stringProp>
+            <stringProp name="Argument.value">TestFile</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Search term used. Just populate this with the a file naming convention.</stringProp>
+          </elementProp>
+          <elementProp name="search.result.limit" elementType="Argument">
+            <stringProp name="Argument.name">search.result.limit</stringProp>
+            <stringProp name="Argument.value">100</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Maximum amount of search results to return.</stringProp>
+          </elementProp>
+          <elementProp name="search.result.loop" elementType="Argument">
+            <stringProp name="Argument.name">search.result.loop</stringProp>
+            <stringProp name="Argument.value">true</stringProp>
+            <stringProp name="Argument.desc">Boolean (true/false) value to indicate whether or not to loop through search results.</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="owner.user.ids" elementType="Argument">
+            <stringProp name="Argument.name">owner.user.ids</stringProp>
+            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.desc">Comma-delimited string of owner user id&apos;s. Example: &quot;123456,654321&quot;</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="content.types" elementType="Argument">
+            <stringProp name="Argument.name">content.types</stringProp>
+            <stringProp name="Argument.value">name</stringProp>
+            <stringProp name="Argument.desc">Comma-delimited string using options: name, description, file_content, comments, or tags</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="created.from.date" elementType="Argument">
+            <stringProp name="Argument.name">created.from.date</stringProp>
+            <stringProp name="Argument.value">05-01-2017 00:00:00</stringProp>
+            <stringProp name="Argument.desc">Created Date From in M-dd-yyyy hh:mm:ss format</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="created.to.date" elementType="Argument">
+            <stringProp name="Argument.name">created.to.date</stringProp>
+            <stringProp name="Argument.value">04-01-2017 00:00:00</stringProp>
+            <stringProp name="Argument.desc">Created Date To in M-dd-yyyy hh:mm:ss format</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="updated.from.date" elementType="Argument">
+            <stringProp name="Argument.name">updated.from.date</stringProp>
+            <stringProp name="Argument.value">05-01-2017 00:00:00</stringProp>
+            <stringProp name="Argument.desc">Updated Date From in M-dd-yyyy hh:mm:ss format</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="updated.to.date" elementType="Argument">
+            <stringProp name="Argument.name">updated.to.date</stringProp>
+            <stringProp name="Argument.value">04-01-2017 00:00:00</stringProp>
+            <stringProp name="Argument.desc">Updated Date To in M-dd-yyyy hh:mm:ss format</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="metadata.template.key" elementType="Argument">
+            <stringProp name="Argument.name">metadata.template.key</stringProp>
+            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Key of the Metadata Template. Note that this is not the Display Name.</stringProp>
+          </elementProp>
+          <elementProp name="metadata.scope" elementType="Argument">
+            <stringProp name="Argument.name">metadata.scope</stringProp>
+            <stringProp name="Argument.value">enterprise</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">enterprise, global, or properties</stringProp>
+          </elementProp>
+          <elementProp name="metadata.filter.key" elementType="Argument">
+            <stringProp name="Argument.name">metadata.filter.key</stringProp>
+            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Only Use Text or Dropdown MD Properties. Key of the Metadata properties. Note that this is not the Display Name.</stringProp>
+          </elementProp>
+          <elementProp name="metadata.filter.value" elementType="Argument">
+            <stringProp name="Argument.name">metadata.filter.value</stringProp>
+            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Only Use Text or Dropdown MD Properties. Value of the Metadata properties. Note that this is not the Display Name.</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Main Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">stoptestnow</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${user.threads}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${rampup}</stringProp>
+        <longProp name="ThreadGroup.start_time">1293887799000</longProp>
+        <longProp name="ThreadGroup.end_time">1293887799000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration">${DURATION}</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <JavaSampler guiclass="JavaTestSamplerGui" testclass="JavaSampler" testname="Get Box Connection" enabled="true">
+          <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="client.id" elementType="Argument">
+                <stringProp name="Argument.name">client.id</stringProp>
+                <stringProp name="Argument.value">${client.id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="client.secret" elementType="Argument">
+                <stringProp name="Argument.name">client.secret</stringProp>
+                <stringProp name="Argument.value">${client.secret}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="enterprise.id" elementType="Argument">
+                <stringProp name="Argument.name">enterprise.id</stringProp>
+                <stringProp name="Argument.value">${enterprise.id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="public.key.id" elementType="Argument">
+                <stringProp name="Argument.name">public.key.id</stringProp>
+                <stringProp name="Argument.value">${public.key.id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="private.key.path" elementType="Argument">
+                <stringProp name="Argument.name">private.key.path</stringProp>
+                <stringProp name="Argument.value">${private.key.path}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="key.pass" elementType="Argument">
+                <stringProp name="Argument.name">key.pass</stringProp>
+                <stringProp name="Argument.value">${key.pass}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="max.cache.entries" elementType="Argument">
+                <stringProp name="Argument.name">max.cache.entries</stringProp>
+                <stringProp name="Argument.value">${max.cache.entries}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="classname">com.box.platform.jmeter.sampler.GetBoxConnection</stringProp>
+        </JavaSampler>
+        <hashTree/>
+        <JavaSampler guiclass="JavaTestSamplerGui" testclass="JavaSampler" testname="Search By File Extension and Name" enabled="true">
+          <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="client.id" elementType="Argument">
+                <stringProp name="Argument.name">client.id</stringProp>
+                <stringProp name="Argument.value">${client.id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="client.secret" elementType="Argument">
+                <stringProp name="Argument.name">client.secret</stringProp>
+                <stringProp name="Argument.value">${client.secret}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="enterprise.id" elementType="Argument">
+                <stringProp name="Argument.name">enterprise.id</stringProp>
+                <stringProp name="Argument.value">${enterprise.id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="public.key.id" elementType="Argument">
+                <stringProp name="Argument.name">public.key.id</stringProp>
+                <stringProp name="Argument.value">${public.key.id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="private.key.path" elementType="Argument">
+                <stringProp name="Argument.name">private.key.path</stringProp>
+                <stringProp name="Argument.value">${private.key.path}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="key.pass" elementType="Argument">
+                <stringProp name="Argument.name">key.pass</stringProp>
+                <stringProp name="Argument.value">${key.pass}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="max.cache.entries" elementType="Argument">
+                <stringProp name="Argument.name">max.cache.entries</stringProp>
+                <stringProp name="Argument.value">${max.cache.entries}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="user.login" elementType="Argument">
+                <stringProp name="Argument.name">user.login</stringProp>
+                <stringProp name="Argument.value">${user.login}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="search.file.extensions" elementType="Argument">
+                <stringProp name="Argument.name">search.file.extensions</stringProp>
+                <stringProp name="Argument.value">${search.file.extensions}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="inclue.ancestor.ids" elementType="Argument">
+                <stringProp name="Argument.name">inclue.ancestor.ids</stringProp>
+                <stringProp name="Argument.value">${inclue.ancestor.ids}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="search.ancestor.ids" elementType="Argument">
+                <stringProp name="Argument.name">search.ancestor.ids</stringProp>
+                <stringProp name="Argument.value">${search.ancestor.ids}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="search.term" elementType="Argument">
+                <stringProp name="Argument.name">search.term</stringProp>
+                <stringProp name="Argument.value">${search.term}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="search.result.limit" elementType="Argument">
+                <stringProp name="Argument.name">search.result.limit</stringProp>
+                <stringProp name="Argument.value">${search.result.limit}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="search.result.loop" elementType="Argument">
+                <stringProp name="Argument.name">search.result.loop</stringProp>
+                <stringProp name="Argument.value">${search.result.loop}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="classname">com.box.platform.jmeter.sampler.SearchByFileExtensionAndName</stringProp>
+        </JavaSampler>
+        <hashTree/>
+        <JavaSampler guiclass="JavaTestSamplerGui" testclass="JavaSampler" testname="Search By Owner and Name" enabled="true">
+          <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="client.id" elementType="Argument">
+                <stringProp name="Argument.name">client.id</stringProp>
+                <stringProp name="Argument.value">${client.id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="client.secret" elementType="Argument">
+                <stringProp name="Argument.name">client.secret</stringProp>
+                <stringProp name="Argument.value">${client.secret}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="enterprise.id" elementType="Argument">
+                <stringProp name="Argument.name">enterprise.id</stringProp>
+                <stringProp name="Argument.value">${enterprise.id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="public.key.id" elementType="Argument">
+                <stringProp name="Argument.name">public.key.id</stringProp>
+                <stringProp name="Argument.value">${public.key.id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="private.key.path" elementType="Argument">
+                <stringProp name="Argument.name">private.key.path</stringProp>
+                <stringProp name="Argument.value">${private.key.path}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="key.pass" elementType="Argument">
+                <stringProp name="Argument.name">key.pass</stringProp>
+                <stringProp name="Argument.value">${key.pass}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="max.cache.entries" elementType="Argument">
+                <stringProp name="Argument.name">max.cache.entries</stringProp>
+                <stringProp name="Argument.value">${max.cache.entries}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="user.login" elementType="Argument">
+                <stringProp name="Argument.name">user.login</stringProp>
+                <stringProp name="Argument.value">${user.login}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="owner.user.ids" elementType="Argument">
+                <stringProp name="Argument.name">owner.user.ids</stringProp>
+                <stringProp name="Argument.value">${owner.user.ids}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="inclue.ancestor.ids" elementType="Argument">
+                <stringProp name="Argument.name">inclue.ancestor.ids</stringProp>
+                <stringProp name="Argument.value">${inclue.ancestor.ids}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="search.ancestor.ids" elementType="Argument">
+                <stringProp name="Argument.name">search.ancestor.ids</stringProp>
+                <stringProp name="Argument.value">${search.ancestor.ids}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="search.term" elementType="Argument">
+                <stringProp name="Argument.name">search.term</stringProp>
+                <stringProp name="Argument.value">${search.term}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="search.result.limit" elementType="Argument">
+                <stringProp name="Argument.name">search.result.limit</stringProp>
+                <stringProp name="Argument.value">${search.result.limit}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="search.result.loop" elementType="Argument">
+                <stringProp name="Argument.name">search.result.loop</stringProp>
+                <stringProp name="Argument.value">${search.result.loop}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="classname">com.box.platform.jmeter.sampler.SearchByOwnerAndName</stringProp>
+        </JavaSampler>
+        <hashTree/>
+        <JavaSampler guiclass="JavaTestSamplerGui" testclass="JavaSampler" testname="Search By Content Type and Name" enabled="true">
+          <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="client.id" elementType="Argument">
+                <stringProp name="Argument.name">client.id</stringProp>
+                <stringProp name="Argument.value">${client.id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="client.secret" elementType="Argument">
+                <stringProp name="Argument.name">client.secret</stringProp>
+                <stringProp name="Argument.value">${client.secret}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="enterprise.id" elementType="Argument">
+                <stringProp name="Argument.name">enterprise.id</stringProp>
+                <stringProp name="Argument.value">${enterprise.id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="public.key.id" elementType="Argument">
+                <stringProp name="Argument.name">public.key.id</stringProp>
+                <stringProp name="Argument.value">${public.key.id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="private.key.path" elementType="Argument">
+                <stringProp name="Argument.name">private.key.path</stringProp>
+                <stringProp name="Argument.value">${private.key.path}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="key.pass" elementType="Argument">
+                <stringProp name="Argument.name">key.pass</stringProp>
+                <stringProp name="Argument.value">${key.pass}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="max.cache.entries" elementType="Argument">
+                <stringProp name="Argument.name">max.cache.entries</stringProp>
+                <stringProp name="Argument.value">${max.cache.entries}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="user.login" elementType="Argument">
+                <stringProp name="Argument.name">user.login</stringProp>
+                <stringProp name="Argument.value">${user.login}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="content.types" elementType="Argument">
+                <stringProp name="Argument.name">content.types</stringProp>
+                <stringProp name="Argument.value">${content.types}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="inclue.ancestor.ids" elementType="Argument">
+                <stringProp name="Argument.name">inclue.ancestor.ids</stringProp>
+                <stringProp name="Argument.value">${inclue.ancestor.ids}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="search.ancestor.ids" elementType="Argument">
+                <stringProp name="Argument.name">search.ancestor.ids</stringProp>
+                <stringProp name="Argument.value">${search.ancestor.ids}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="search.term" elementType="Argument">
+                <stringProp name="Argument.name">search.term</stringProp>
+                <stringProp name="Argument.value">${search.term}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="search.result.limit" elementType="Argument">
+                <stringProp name="Argument.name">search.result.limit</stringProp>
+                <stringProp name="Argument.value">${search.result.limit}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="search.result.loop" elementType="Argument">
+                <stringProp name="Argument.name">search.result.loop</stringProp>
+                <stringProp name="Argument.value">${search.result.loop}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="classname">com.box.platform.jmeter.sampler.SearchByContentTypeAndName</stringProp>
+        </JavaSampler>
+        <hashTree/>
+        <JavaSampler guiclass="JavaTestSamplerGui" testclass="JavaSampler" testname="Search By Date Created Range and Name" enabled="true">
+          <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="client.id" elementType="Argument">
+                <stringProp name="Argument.name">client.id</stringProp>
+                <stringProp name="Argument.value">${client.id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="client.secret" elementType="Argument">
+                <stringProp name="Argument.name">client.secret</stringProp>
+                <stringProp name="Argument.value">${client.secret}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="enterprise.id" elementType="Argument">
+                <stringProp name="Argument.name">enterprise.id</stringProp>
+                <stringProp name="Argument.value">${enterprise.id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="public.key.id" elementType="Argument">
+                <stringProp name="Argument.name">public.key.id</stringProp>
+                <stringProp name="Argument.value">${public.key.id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="private.key.path" elementType="Argument">
+                <stringProp name="Argument.name">private.key.path</stringProp>
+                <stringProp name="Argument.value">${private.key.path}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="key.pass" elementType="Argument">
+                <stringProp name="Argument.name">key.pass</stringProp>
+                <stringProp name="Argument.value">${key.pass}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="max.cache.entries" elementType="Argument">
+                <stringProp name="Argument.name">max.cache.entries</stringProp>
+                <stringProp name="Argument.value">${max.cache.entries}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="user.login" elementType="Argument">
+                <stringProp name="Argument.name">user.login</stringProp>
+                <stringProp name="Argument.value">${user.login}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="created.from.date" elementType="Argument">
+                <stringProp name="Argument.name">created.from.date</stringProp>
+                <stringProp name="Argument.value">${created.from.date}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="created.to.date" elementType="Argument">
+                <stringProp name="Argument.name">created.to.date</stringProp>
+                <stringProp name="Argument.value">${created.to.date}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="inclue.ancestor.ids" elementType="Argument">
+                <stringProp name="Argument.name">inclue.ancestor.ids</stringProp>
+                <stringProp name="Argument.value">${inclue.ancestor.ids}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="search.ancestor.ids" elementType="Argument">
+                <stringProp name="Argument.name">search.ancestor.ids</stringProp>
+                <stringProp name="Argument.value">${search.ancestor.ids}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="search.term" elementType="Argument">
+                <stringProp name="Argument.name">search.term</stringProp>
+                <stringProp name="Argument.value">${search.term}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="search.result.limit" elementType="Argument">
+                <stringProp name="Argument.name">search.result.limit</stringProp>
+                <stringProp name="Argument.value">${search.result.limit}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="search.result.loop" elementType="Argument">
+                <stringProp name="Argument.name">search.result.loop</stringProp>
+                <stringProp name="Argument.value">${search.result.loop}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="classname">com.box.platform.jmeter.sampler.SearchByDateCreatedAndName</stringProp>
+        </JavaSampler>
+        <hashTree/>
+        <JavaSampler guiclass="JavaTestSamplerGui" testclass="JavaSampler" testname="Search By Date Updated Range and Name" enabled="true">
+          <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="client.id" elementType="Argument">
+                <stringProp name="Argument.name">client.id</stringProp>
+                <stringProp name="Argument.value">${client.id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="client.secret" elementType="Argument">
+                <stringProp name="Argument.name">client.secret</stringProp>
+                <stringProp name="Argument.value">${client.secret}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="enterprise.id" elementType="Argument">
+                <stringProp name="Argument.name">enterprise.id</stringProp>
+                <stringProp name="Argument.value">${enterprise.id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="public.key.id" elementType="Argument">
+                <stringProp name="Argument.name">public.key.id</stringProp>
+                <stringProp name="Argument.value">${public.key.id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="private.key.path" elementType="Argument">
+                <stringProp name="Argument.name">private.key.path</stringProp>
+                <stringProp name="Argument.value">${private.key.path}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="key.pass" elementType="Argument">
+                <stringProp name="Argument.name">key.pass</stringProp>
+                <stringProp name="Argument.value">${key.pass}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="max.cache.entries" elementType="Argument">
+                <stringProp name="Argument.name">max.cache.entries</stringProp>
+                <stringProp name="Argument.value">${max.cache.entries}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="user.login" elementType="Argument">
+                <stringProp name="Argument.name">user.login</stringProp>
+                <stringProp name="Argument.value">${user.login}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="updated.from.date" elementType="Argument">
+                <stringProp name="Argument.name">updated.from.date</stringProp>
+                <stringProp name="Argument.value">${updated.from.date}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="updated.to.date" elementType="Argument">
+                <stringProp name="Argument.name">updated.to.date</stringProp>
+                <stringProp name="Argument.value">${updated.to.date}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="inclue.ancestor.ids" elementType="Argument">
+                <stringProp name="Argument.name">inclue.ancestor.ids</stringProp>
+                <stringProp name="Argument.value">${inclue.ancestor.ids}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="search.ancestor.ids" elementType="Argument">
+                <stringProp name="Argument.name">search.ancestor.ids</stringProp>
+                <stringProp name="Argument.value">${search.ancestor.ids}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="search.term" elementType="Argument">
+                <stringProp name="Argument.name">search.term</stringProp>
+                <stringProp name="Argument.value">${search.term}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="search.result.limit" elementType="Argument">
+                <stringProp name="Argument.name">search.result.limit</stringProp>
+                <stringProp name="Argument.value">${search.result.limit}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="search.result.loop" elementType="Argument">
+                <stringProp name="Argument.name">search.result.loop</stringProp>
+                <stringProp name="Argument.value">${search.result.loop}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="classname">com.box.platform.jmeter.sampler.SearchByDateUpdatedAndName</stringProp>
+        </JavaSampler>
+        <hashTree/>
+        <JavaSampler guiclass="JavaTestSamplerGui" testclass="JavaSampler" testname="Search By Metadata" enabled="true">
+          <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="client.id" elementType="Argument">
+                <stringProp name="Argument.name">client.id</stringProp>
+                <stringProp name="Argument.value">${client.id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="client.secret" elementType="Argument">
+                <stringProp name="Argument.name">client.secret</stringProp>
+                <stringProp name="Argument.value">${client.secret}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="enterprise.id" elementType="Argument">
+                <stringProp name="Argument.name">enterprise.id</stringProp>
+                <stringProp name="Argument.value">${enterprise.id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="public.key.id" elementType="Argument">
+                <stringProp name="Argument.name">public.key.id</stringProp>
+                <stringProp name="Argument.value">${public.key.id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="private.key.path" elementType="Argument">
+                <stringProp name="Argument.name">private.key.path</stringProp>
+                <stringProp name="Argument.value">${private.key.path}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="key.pass" elementType="Argument">
+                <stringProp name="Argument.name">key.pass</stringProp>
+                <stringProp name="Argument.value">${key.pass}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="max.cache.entries" elementType="Argument">
+                <stringProp name="Argument.name">max.cache.entries</stringProp>
+                <stringProp name="Argument.value">${max.cache.entries}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="user.login" elementType="Argument">
+                <stringProp name="Argument.name">user.login</stringProp>
+                <stringProp name="Argument.value">${user.login}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="search.result.limit" elementType="Argument">
+                <stringProp name="Argument.name">search.result.limit</stringProp>
+                <stringProp name="Argument.value">${search.result.limit}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="search.result.loop" elementType="Argument">
+                <stringProp name="Argument.name">search.result.loop</stringProp>
+                <stringProp name="Argument.value">${search.result.loop}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="metadata.template.key" elementType="Argument">
+                <stringProp name="Argument.name">metadata.template.key</stringProp>
+                <stringProp name="Argument.value">${metadata.template.key}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="metadata.scope" elementType="Argument">
+                <stringProp name="Argument.name">metadata.scope</stringProp>
+                <stringProp name="Argument.value">${metadata.scope}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="metadata.filter.key" elementType="Argument">
+                <stringProp name="Argument.name">metadata.filter.key</stringProp>
+                <stringProp name="Argument.value">${metadata.filter.key}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="metadata.filter.value" elementType="Argument">
+                <stringProp name="Argument.name">metadata.filter.value</stringProp>
+                <stringProp name="Argument.value">${metadata.filter.value}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="classname">com.box.platform.jmeter.sampler.SearchByMetadata</stringProp>
+        </JavaSampler>
+        <hashTree/>
+        <JavaSampler guiclass="JavaTestSamplerGui" testclass="JavaSampler" testname="Search By File Extension, Name, and Metadata" enabled="true">
+          <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="client.id" elementType="Argument">
+                <stringProp name="Argument.name">client.id</stringProp>
+                <stringProp name="Argument.value">${client.id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="client.secret" elementType="Argument">
+                <stringProp name="Argument.name">client.secret</stringProp>
+                <stringProp name="Argument.value">${client.secret}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="enterprise.id" elementType="Argument">
+                <stringProp name="Argument.name">enterprise.id</stringProp>
+                <stringProp name="Argument.value">${enterprise.id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="public.key.id" elementType="Argument">
+                <stringProp name="Argument.name">public.key.id</stringProp>
+                <stringProp name="Argument.value">${public.key.id}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="private.key.path" elementType="Argument">
+                <stringProp name="Argument.name">private.key.path</stringProp>
+                <stringProp name="Argument.value">${private.key.path}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="key.pass" elementType="Argument">
+                <stringProp name="Argument.name">key.pass</stringProp>
+                <stringProp name="Argument.value">${key.pass}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="max.cache.entries" elementType="Argument">
+                <stringProp name="Argument.name">max.cache.entries</stringProp>
+                <stringProp name="Argument.value">${max.cache.entries}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="user.login" elementType="Argument">
+                <stringProp name="Argument.name">user.login</stringProp>
+                <stringProp name="Argument.value">${user.login}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="search.file.extensions" elementType="Argument">
+                <stringProp name="Argument.name">search.file.extensions</stringProp>
+                <stringProp name="Argument.value">${search.file.extensions}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="inclue.ancestor.ids" elementType="Argument">
+                <stringProp name="Argument.name">inclue.ancestor.ids</stringProp>
+                <stringProp name="Argument.value">${inclue.ancestor.ids}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="search.ancestor.ids" elementType="Argument">
+                <stringProp name="Argument.name">search.ancestor.ids</stringProp>
+                <stringProp name="Argument.value">${search.ancestor.ids}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="search.term" elementType="Argument">
+                <stringProp name="Argument.name">search.term</stringProp>
+                <stringProp name="Argument.value">${search.term}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="search.result.limit" elementType="Argument">
+                <stringProp name="Argument.name">search.result.limit</stringProp>
+                <stringProp name="Argument.value">${search.result.limit}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="search.result.loop" elementType="Argument">
+                <stringProp name="Argument.name">search.result.loop</stringProp>
+                <stringProp name="Argument.value">${search.result.loop}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="metadata.template.key" elementType="Argument">
+                <stringProp name="Argument.name">metadata.template.key</stringProp>
+                <stringProp name="Argument.value">${metadata.template.key}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="metadata.scope" elementType="Argument">
+                <stringProp name="Argument.name">metadata.scope</stringProp>
+                <stringProp name="Argument.value">${metadata.scope}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="metadata.filter.key" elementType="Argument">
+                <stringProp name="Argument.name">metadata.filter.key</stringProp>
+                <stringProp name="Argument.value">${metadata.filter.key}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="metadata.filter.value" elementType="Argument">
+                <stringProp name="Argument.name">metadata.filter.value</stringProp>
+                <stringProp name="Argument.value">${metadata.filter.value}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="classname">com.box.platform.jmeter.sampler.SearchByFileExtensionNameAndMetadata</stringProp>
+        </JavaSampler>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+    <WorkBench guiclass="WorkBenchGui" testclass="WorkBench" testname="WorkBench" enabled="true">
+      <boolProp name="WorkBench.save">true</boolProp>
+    </WorkBench>
+    <hashTree/>
+  </hashTree>
+</jmeterTestPlan>
